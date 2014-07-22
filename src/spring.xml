@@ -3,27 +3,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class="Triangle">
-        <property name="type" value="some type" />
-        <property name="height" value="20" />
-        <property name="points">
-            <list value-type="Point">
-                <ref bean="zeroPoint" />
-                <ref bean="firstPoint" />
-                <ref bean="secondPoint" />
-            </list>
-        </property>
+    <bean id="triangle" class="Triangle" autowire="byName">
+
     </bean>
 
-    <bean id="zeroPoint" class="Point">
+    <bean id="pointA" class="Point">
         <property name="x" value="0" />
         <property name="y" value="0" />
     </bean>
-    <bean id="firstPoint" class="Point">
+    <bean id="pointB" class="Point">
         <property name="x" value="-20" />
         <property name="y" value="0" />
     </bean>
-    <bean id="secondPoint" class="Point">
+    <bean id="pointC" class="Point">
         <property name="x" value="0" />
         <property name="y" value="20" />
     </bean>
