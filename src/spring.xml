@@ -6,24 +6,29 @@
     <bean id="triangle" class="Triangle">
         <property name="type" value="some type" />
         <property name="height" value="20" />
-        <property name="pointA" ref="zeroPoint" />
-        <property name="pointB" ref="firstPoint" />
-        <property name="pointC" ref="secondPoint"  />
+        <property name="points">
+            <list value-type="Point">
+                <ref bean="zeroPoint" />
+                <ref bean="firstPoint" />
+                <ref bean="secondPoint" />
+            </list>
+        </property>
     </bean>
 
     <bean id="zeroPoint" class="Point">
         <property name="x" value="0" />
         <property name="y" value="0" />
     </bean>
-
     <bean id="firstPoint" class="Point">
         <property name="x" value="-20" />
         <property name="y" value="0" />
     </bean>
-
     <bean id="secondPoint" class="Point">
         <property name="x" value="0" />
         <property name="y" value="20" />
     </bean>
+
+
+
 
 </beans>

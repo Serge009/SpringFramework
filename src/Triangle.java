@@ -1,3 +1,7 @@
+import org.springframework.core.env.PropertyResolver;
+
+import java.util.List;
+
 /**
  * Created by Matrix on 22.07.2014.
  */
@@ -7,6 +11,16 @@ public class Triangle {
 
     private int height;
 
+    private List<Point> points;
+
+    public List<Point> getPoints() {
+        return points;
+    }
+
+    public void setPoints(List<Point> points) {
+        this.points = points;
+    }
+    /*
     private Point pointA;
     private Point pointB;
     private Point pointC;
@@ -35,6 +49,7 @@ public class Triangle {
     public void setPointC(Point pointC) {
         this.pointC = pointC;
     }
+    */
 
     public int getHeight() {
         return height;
@@ -52,18 +67,18 @@ public class Triangle {
         this.type = type;
     }
 
+
     @Override
     public String toString() {
         return "Triangle{" +
                 "type='" + type + '\'' +
                 ", height=" + height +
-                ", pointA=" + pointA +
-                ", pointB=" + pointB +
-                ", pointC=" + pointC +
+                ", points=" + points +
                 '}';
     }
 
-    public void draw(){
+    public void draw() {
         System.out.println(this);
     }
+
 }
